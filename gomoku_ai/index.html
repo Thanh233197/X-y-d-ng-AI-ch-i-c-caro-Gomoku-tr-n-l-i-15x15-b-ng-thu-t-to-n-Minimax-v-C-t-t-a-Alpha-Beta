@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gomoku AI (Minimax + Alpha-Beta)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Caro AI <span>Minimax</span></h1>
+            <p>Đánh bại AI bằng kỹ năng của bạn (15x15)</p>
+        </header>
+
+        <div class="game-area">
+            <div class="sidebar">
+                <div class="info-panel current-turn">
+                    <h3>Lượt hiện tại</h3>
+                    <div id="turn-indicator" class="indicator player">Bạn (X)</div>
+                </div>
+                
+                <div class="info-panel game-controls">
+                    <h3>Cài đặt</h3>
+                    <div class="control-group">
+                        <label>Độ sâu Minimax: <span id="depth-label">3</span></label>
+                        <input type="range" id="difficulty" min="1" max="4" value="3">
+                        <small style="color: #8b949e; font-size: 0.8rem; margin-top: 0.2rem;">Lưu ý: Độ sâu lớn sẽ khiến AI suy nghĩ lâu hơn.</small>
+                    </div>
+                    <div class="control-group">
+                        <label>Người đi trước:</label>
+                        <select id="first-player">
+                            <option value="player">Người chơi</option>
+                            <option value="ai">AI</option>
+                        </select>
+                    </div>
+                    <button id="restart-btn" class="btn primary">Chơi lại / Bắt đầu mới</button>
+                    <p id="status-message" class="status"></p>
+                </div>
+            </div>
+
+            <div class="board-container">
+                <canvas id="game-board" width="600" height="600"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <script src="ai.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
